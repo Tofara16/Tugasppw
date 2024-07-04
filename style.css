@@ -1,0 +1,438 @@
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Futsal Store</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    /* Custom CSS for Template Futsal - Enhanced */
+    /* Global Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #2c2c2c;
+      margin: 0;
+      padding: 0;
+      color: #f8f9fa;
+    }
+
+    .header {
+      background: url('images/header-bg.jpg') no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #ffffff;
+    }
+
+    .header-content {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .section-title {
+      color: #f8f9fa;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .navbar {
+      background-color: #1a1a1a;
+    }
+
+    .navbar-nav .nav-link {
+      color: #ffffff;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #28a745;
+    }
+    
+    .navbar-brand {
+      background-color: #007bff; /* Warna latar belakang logo diubah menjadi biru */
+      padding: 10px 15px;
+      border-radius: 5px;
+    }
+
+    .navbar-brand img {
+      max-width: 150px;
+      height: auto;
+      width: auto;
+      filter: brightness(0) invert(1); /* Untuk membuat logo menjadi warna biru */
+    }
+
+    /* Banner Section */
+    .banner_section {
+      background-image: url('images/banner-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      color: #ffffff;
+      padding: 100px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .banner_content {
+      max-width: 600px;
+    }
+
+    .banner_text {
+      font-size: 36px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      animation: textAnimation 2s ease-in-out infinite;
+    }
+
+    .shop_bt .btn {
+      background-color: #28a745;
+      border-color: #28a745;
+      color: #ffffff;
+      font-weight: 600;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .shop_bt .btn:hover {
+      background-color: #218838;
+      transform: translateY(-3px);
+    }
+
+    /* About Section */
+    .about_section {
+      background-image: url('images/about-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      padding: 100px 0;
+      color: ##292929; /* Warna tulisan putih */
+    }
+
+    .about_content {
+      max-width: 400px;
+    }
+
+    .about_text {
+      font-size: 36px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .shop_bt_2 .btn {
+      background-color: #17a2b8;
+      border-color: #17a2b8;
+      color: #ffffff;
+      font-weight: 600;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .shop_bt_2 .btn:hover {
+      background-color: #138496;
+      transform: translateY(-3px);
+    }
+
+    /* Product Section */
+    .featured_section,
+    .product_section {
+      background-color: #343a40;
+      padding: 100px 0;
+    }
+
+    .featured_text,
+    .product_text {
+      font-size: 36px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #ffffff; /* Warna tulisan putih */
+    }
+
+    .long_text {
+      font-size: 16px;
+      margin-bottom: 40px;
+    }
+
+    .card {
+      border: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-img-top {
+      max-height: 200px;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover .card-img-top {
+      transform: scale(1.1);
+    }
+
+    .card-title {
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    .card-text {
+      font-size: 14px;
+      color: #dcdcdc;
+      margin-bottom: 20px;
+    }
+
+    .btn-buy-now {
+      background-color: #ff6347; /* Ganti warna background tombol */
+      border-color: #ff6347; /* Ganti warna border tombol */
+      color: #ffffff; /* Ganti warna teks tombol */
+      font-weight: 600;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn-buy-now:hover {
+      background-color: #e5533d; /* Ganti warna background tombol saat hover */
+      transform: translateY(-3px);
+    }
+
+    /* Testimonial Section */
+    .testimonial_section {
+      background-color: #ffffff; /* Warna latar belakang putih */
+      padding: 100px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .testimonial_text {
+      font-size: 36px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #292929; /* Warna tulisan hitam */
+    }
+
+    .ipsum_text {
+      font-size: 18px;
+      margin-bottom: 40px;
+      color: #4a4a4a; /* Warna tulisan abu-abu muda */
+    }
+
+    .client_main {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .client_image {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+
+    .client_image img {
+      width: 100%;
+      height: auto;
+      transition: transform 0.3s ease;
+    }
+
+    .client_image:hover img {
+      transform: scale(1.1);
+    }
+
+    .client_name {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: #292929; /* Warna tulisan hitam */
+    }
+
+    .client_designation {
+      font-size: 14px;
+      color: #808080; /* Warna tulisan abu-abu */
+    }
+
+    /* Contact Section */
+    .contact_section {
+      background-color: #292929;
+      padding: 100px 0;
+    }
+
+    .contact_text {
+      font-size: 36px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+
+    .contact_description {
+      font-size: 18px;
+      margin-bottom: 40px;
+      color: #f0f0f0;
+    }
+
+    .contact_info {
+      margin-bottom: 20px;
+      color: #f0f0f0;
+    }
+
+    .contact_info h4 {
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    .contact_info p {
+      font-size: 16px;
+      margin-bottom: 10px;
+      color: #f0f0f0;
+    }
+
+    .contact_info a {
+      color: #007bff;
+    }
+
+    .contact_info a:hover {
+      text-decoration: underline;
+    }
+
+    .form-group label {
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      background-color: #434343;
+      border: none;
+      color: #ffffff;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: #b0b0b0;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      background-color: #4d4d4d;
+      border-color: #007bff;
+    }
+
+    .submit_button {
+      background-color: #28a745;
+      border-color: #28a745;
+      color: #ffffff;
+      font-weight: 600;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .submit_button:hover {
+      background-color: #218838;
+      transform: translateY(-3px);
+    }
+
+    /* Footer Section */
+    .footer_section {
+      background-color: #1a1a1a;
+      padding: 40px 0;
+    }
+
+    .footer_section a {
+      color: #ffffff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer_section a:hover {
+      color: #007bff;
+    }
+
+    .footer_logo img {
+      max-width: 200px;
+      height: auto;
+    }
+
+    .footer_menu ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .footer_menu ul li {
+      margin: 0 15px;
+    }
+
+    .footer_menu ul li a {
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    .newsletter_text {
+      font-size: 16px;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    .newsletter_form input[type="email"] {
+      background-color: #434343;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      margin-right: 10px;
+      color: #ffffff;
+    }
+
+    .newsletter_form input[type="submit"] {
+      background-color: #007bff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      color: #ffffff;
+      font-weight: 600;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .newsletter_form input[type="submit"]:hover {
+      background-color: #0056b3;
+      transform: translateY(-3px);
+    }
+
+    /* Keyframes */
+    @keyframes textAnimation {
+      0%, 100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.5;
+      }
+    }
+
+    /* Map Section */
+    .map_section {
+      height: 400px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .map_section iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
